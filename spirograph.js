@@ -8,7 +8,7 @@ const strokeWidth = 2;
 const sides = 5;
 const bigRadius = 240;
 const smallRadius = 75;
-const ratio = 50;
+let ratio = document.getElementById('ratio').value ? document.getElementById('ratio').value : 145;
 
 const colors = [
     '#7400B8',
@@ -49,5 +49,12 @@ function draw() {
     ctx.stroke();
 }
 
+
+document.getElementById('ratio').addEventListener("change", function () {
+    ratio = document.getElementById('ratio').value ? document.getElementById('ratio').value : 145;
+    document.getElementById('ratio-label').innerHTML = 'Ratio: ' + ratio;
+    ctx.clearRect(0, 0, 750, 750);
+    requestAnimationFrame(draw);
+});
 
 draw();

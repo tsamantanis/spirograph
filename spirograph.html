@@ -5,14 +5,52 @@
     <title>Spirograph Canvas</title>
     <style>
     	canvas { display: block; margin: auto; }
+        html { align-items: center; justify-content: center; text-align: center; }
+        a { float: left; }
+        .slider {
+            -webkit-appearance: none;
+            width: 50%;
+            height: 15px;
+            border-radius: 15px;
+            background: #5E60CE;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+            margin-top: 10px;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: none;
+            background: #7400B8;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #7400B8;
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
 <canvas id="spirograph" width="750" height="750"></canvas>
-
+<label id="ratio-label">Ratio: 145</label><br />
+<input type="range" min="0" max="300" step="5" value="145" class="slider" id="ratio">
 <script src="spirograph.js">
 </script>
+<br />
+<br />
+<br />
 <a href="/spirograph/">Spiral</a>
 <a href="/spirograph/polygon">Polygon</a>
 
