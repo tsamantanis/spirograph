@@ -1,4 +1,4 @@
-const canvas = document.getElementById('canvas');
+const canvas = document.getElementById('spiral');
 const ctx = canvas.getContext('2d');
 
 let posX = canvas.width / 2;
